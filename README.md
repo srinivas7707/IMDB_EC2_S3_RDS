@@ -7,6 +7,15 @@ Analysis done to fetch the following :
 * Highest Average user rating
 * Region wise Tv-Series (Started and ended)
 
+<h4> <b> AWS SERVICES USED </b> </h4>
+
+* AWS EC2 Instance
+* AWS IAM Roles
+* AWS S3 Bucket
+* AWS Lambda Function
+* AWS RDS Instance for Relational Database
+* AWS Cloud Watch
+
 <h3> Steps to create an EC2 Instance </h3>
 
 * Create an AWS Account. You can create a free tier account with pay as you go pricing.
@@ -81,6 +90,12 @@ STEPS :
 * select the Free Tier connection
 * Select Publicly accessible as Yes so that we can connect from outside the VPC Network as well.
 * Note EndPoint name in the Connectivity&Security Tab which will be used a host-name in the Mysql Workbench
+
+<h3> Cloud-watch </h3>
+
+* You can watch the logs of Lambda event triggers in the AWS CloudWatch Service
+* Whenever an event is triggered Visit CloudWatch console , go to the Log Groups.
+* You Would find the Lambda function name and underneath you can watch the logs
 
 <h3> MySQL </h3>
 
