@@ -60,4 +60,31 @@ vi ~/.bashrc
 <h3> You can find spark scala code in the /src/main/spark/imdb_data.scala file </h3>
 
 
+<h3> <b> Lambda Function to trigger an event to load into RDS </b> </h3>
 
+STEPS :
+* Go to the Lambda console and create a Lambda function
+* Give the function name and execution role(Above created IAM role for Lambda to access s3 and cloudwatch)
+* Open the function and add a trigger
+* Select Source as S3 and select bucket_name and select default file_format(.csv)
+* Add a layer for Mysql connection
+* Give the Python Mysql connector Jar file ZIP file and select python 3.8 as Runtime
+* Write Lambda code to trigger the event i.e whenever spark dumps the data into s3 bucket , it takes and load into mysql database.
+
+<h3> You can find Lambda code in /src/main/lambda/lambda_function.py </h3>
+
+<h3> RDS </h3>
+
+* Open RDS console 
+* Create a database
+* Give Engine type as Mysql
+* select the Free Tier connection
+* Select Publicly accessible as Yes so that we can connect from outside the VPC Network as well.
+* Note EndPoint name in the Connectivity&Security Tab which will be used a host-name in the Mysql Workbench
+
+<h3> MySQL </h3>
+
+* Install MYSQL workbench and the respective Mysql installer and connector jars
+* Open a connection with hostname as RDS Endpoint
+* Give port number and other details
+* After that create a database and table structure exactly which we have given in the lambda code
