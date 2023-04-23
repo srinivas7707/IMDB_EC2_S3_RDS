@@ -29,8 +29,13 @@ Analysis done to fetch the following :
    * sudo yum install python
    * sudo yum install scala
    * wget http://archive.apache.org/dist/spark/spark-3.3.0/spark-3.3.0-bin-hadoop2.tgz
+   * tar -xvf spark-3.3.0-bin-hadoop2.tgz
+   
 * Create a bash profile and set the environment variables for the configurations set :
+vi ~/.bashrc
 <img width="588" alt="bash" src="https://user-images.githubusercontent.com/68941492/233819613-1a0bfa83-e917-4f63-9c3e-c05c7e162502.png">
+
+* source ~/.bashrc
 
 <h3> EC2 to access S3 bucket via Access-key and secret-access-key </h3>
 
@@ -40,3 +45,19 @@ Analysis done to fetch the following :
 * Default region name [ap-southeast-2]: ap-southeast
 * Default output format [None]: 
  
+<h3> IAM Roles for the entire flow : </h3>
+
+* EC2 : Attach an IAM Role of (AmazonS3FullAccess) to EC2 which allows EC2 instances to call AWS services on your behalf.
+* Lambda : Attach following 3 roles :
+  * AmazonRDSFullAccess
+  * AmazonS3FullAccess
+  * CloudWatchFullAccess
+
+<h3> Execute spark scala code to insert the data into s3 buckets </h3>
+
+* Execute command : 	spark-shell -i ~/spark-3.3.0-bin-hadoop2.tgz/bin/imdb_data.scala
+
+<h3> You can find spark scala code in the /src/main/spark/imdb_data.scala file </h3>
+
+
+
