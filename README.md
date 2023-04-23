@@ -49,8 +49,8 @@ vi ~/.bashrc
 <h3> EC2 to access S3 bucket via Access-key and secret-access-key </h3>
 
 * [ec2-user@ip-172-31-13-34 ~]$ aws configure
-* AWS Access Key ID [****************5UX4]: A*************4
-* AWS Secret Access Key [****************vBAu]: M*******************u
+* AWS Access Key ID [****************5UX4]: Enter the access key
+* AWS Secret Access Key [****************vBAu]: Enter the secret access key
 * Default region name [ap-southeast-2]: ap-southeast
 * Default output format [None]: 
  
